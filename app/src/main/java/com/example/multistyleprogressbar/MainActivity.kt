@@ -14,6 +14,7 @@ import androidx.core.view.WindowInsetsCompat
  * 测试 第一次提交
  * 测试 第二次提交
  * 测试 第三次提交
+ * 测试 第四次提交 on github
  */
 class MainActivity : AppCompatActivity(), Handler.Callback {
     private lateinit var handler: Handler
