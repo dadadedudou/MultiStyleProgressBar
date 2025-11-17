@@ -10,6 +10,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 
+/**
+ * 测试 第一次提交
+ */
 class MainActivity : AppCompatActivity(), Handler.Callback {
     private lateinit var handler: Handler
     var progressbar: ProgressBar? = null
