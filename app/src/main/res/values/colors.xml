@@ -7,4 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="layout_avatar_bg">#F2E9E9</color>
+    <color name="ai_meals_menu_bg_item_color_end">#15294B</color>
+    <color name="bg">#fa9f27</color>
 </resources>
