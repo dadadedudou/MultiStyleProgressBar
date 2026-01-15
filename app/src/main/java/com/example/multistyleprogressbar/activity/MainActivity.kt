@@ -5,11 +5,13 @@ import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
+import android.text.method.ScrollingMovementMethod
 import android.view.MotionEvent
 import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -23,7 +25,6 @@ import com.example.multistyleprogressbar.adapter.FoodsAdapter
 import com.example.multistyleprogressbar.bean.MealsFood
 import com.example.multistyleprogressbar.ui.CircularZoomLoadingAnim
 import com.example.multistyleprogressbar.ui.CustomSmoothScroller
-import com.example.multistyleprogressbar.ui.RotaView
 import com.example.multistyleprogressbar.util.loadGif
 
 
@@ -40,13 +41,14 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
     private lateinit var thinkGif: ImageView
     private lateinit var circularZoom: CircularZoomLoadingAnim
     private lateinit var rvScrollingList: RecyclerView
-    private lateinit var rotaView: RotaView
     private var markerBitAvatar: Int = 0
     private var markerBitScrollingList: Int = 0
     private lateinit var foodList: MutableList<MealsFood>
     private lateinit var mAdapter: FoodsAdapter
     private lateinit var layoutManager: LinearLayoutManager
     private lateinit var scroller: CustomSmoothScroller
+    private lateinit var tvSwitchText: TextView
+    private lateinit var buttonSwitchText: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,7 +72,10 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
         buttonProgressbarReset = findViewById(R.id.button_progressbar_reset)
         buttonSwitchAvatar = findViewById(R.id.button_switch_avatar)
         buttonScrollingList = findViewById(R.id.button_scrolling_list)
-        rotaView = findViewById(R.id.rota_view)
+        tvSwitchText = findViewById(R.id.tv_switch_text)
+        buttonSwitchText = findViewById(R.id.button_switch_text)
+        tvSwitchText.movementMethod = object : ScrollingMovementMethod(){}
+        tvSwitchText.text = resources.getText(R.string.main_switch_text_content_1)
     }
 
     private fun initListener() {
@@ -78,6 +83,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
         buttonProgressbarReset.setOnClickListener(this)
         buttonSwitchAvatar.setOnClickListener(this)
         buttonScrollingList.setOnClickListener(this)
+        buttonSwitchText.setOnClickListener(this)
     }
 
     private fun initData() {
@@ -150,14 +156,27 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
                 scroller.targetPosition = foodList.size - 1
                 layoutManager.startSmoothScroll(scroller)
             }
+
+            R.id.button_switch_text -> {
+                switchTextContent()
+            }
         }
     }
 
-    private fun startRotationAnimation() {
-        val rotationAnim = ObjectAnimator.ofFloat(rotaView, "rotation", 0f, 3600f)
-        rotationAnim.setDuration(30000) // 设置动画持续时间，例如1000毫秒
-        rotationAnim.repeatCount = ValueAnimator.INFINITE // 设置动画重复次数
-        rotationAnim.repeatMode = ValueAnimator.RESTART // 设置动画重复模式
-        rotationAnim.start()
+    private fun switchTextContent(){
+        tvSwitchText.scrollTo(0,0)
+        when (++markerBitAvatar % 3) {
+            0 -> {
+                tvSwitchText.text = resources.getText(R.string.main_switch_text_content_1)
+            }
+
+            1 -> {
+                tvSwitchText.text = resources.getText(R.string.main_switch_text_content_2)
+            }
+
+            2 -> {
+                tvSwitchText.text = resources.getText(R.string.main_switch_text_content_3)
+            }
+        }
     }
 }

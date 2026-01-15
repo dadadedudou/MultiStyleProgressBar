@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <string name="app_name">MultiStyleProgressBar</string>
-    <string name="main_button_progressbar_start">start</string>
-    <string name="main_button_progressbar_reset">reset</string>
-    <string name="main_button_switch_avatar">Switch Avatar</string>
-    <string name="main_button_scrolling_list">List Scrolling</string>
-</resources>
