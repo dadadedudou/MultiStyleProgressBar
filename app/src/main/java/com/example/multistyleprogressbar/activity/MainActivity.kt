@@ -110,8 +110,6 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
         foodList = mutableListOf()
         rvScrollingList.adapter = mAdapter
         mAdapter.setList(foodList)
-
-//        startRotationAnimation()
     }
 
     private fun switchAvatar() {
