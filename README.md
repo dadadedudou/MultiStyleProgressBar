@@ -10,5 +10,5 @@
 ### 第二版预览效果如下
 <img src="https://github.com/dadadedudou/MultiStyleProgressBar/blob/main/preview2.gif" width="300" height="668">
 
-### 第二版预览效果如下
+### 第三版预览效果如下
 <img src="https://github.com/dadadedudou/MultiStyleProgressBar/blob/main/preview3.gif" width="300" height="668">
