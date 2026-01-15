@@ -185,16 +185,39 @@
             android:text="@string/main_button_scrolling_list" />
     </LinearLayout>
 
-    <com.example.multistyleprogressbar.ui.RotaView
-        android:id="@+id/rota_view"
-        android:layout_width="300dp"
-        android:layout_height="300dp"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/px_40"
+        android:background="@color/layout_avatar_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3"
-        app:clock_backgroundColor="@color/bg"
-        app:clock_darkColor="@color/bg"
-        app:clock_lightColor="#ffffff"/>
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+        <TextView
+            android:id="@+id/tv_switch_text"
+            android:layout_width="@dimen/px_1500"
+            android:layout_height="wrap_content"
+            android:maxHeight="@dimen/px_500"
+            android:padding="@dimen/px_40"
+            android:gravity="start"
+            android:textColor="#354764"
+            android:lineSpacingMultiplier="1.2"
+            android:textSize="@dimen/px_60"
+            android:textFontWeight="400"
+            android:scrollbars="vertical"
+            android:overScrollMode="always"
+            android:background="@drawable/answer_gradient_border"/>
+        <Button
+            android:id="@+id/button_switch_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:text="@string/main_button_switch_text_content" />
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

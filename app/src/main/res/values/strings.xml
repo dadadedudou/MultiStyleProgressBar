@@ -4,4 +4,8 @@
     <string name="main_button_progressbar_reset">reset</string>
     <string name="main_button_switch_avatar">Switch Avatar</string>
     <string name="main_button_scrolling_list">List Scrolling</string>
+    <string name="main_button_switch_text_content">Switch Text Content</string>
+    <string name="main_switch_text_content_1">Hello, how can I help you?</string>
+    <string name="main_switch_text_content_2">Although in most cases, the scrolling function of TextView can be achieved solely through XML settings.</string>
+    <string name="main_switch_text_content_3">In order to trigger scrolling, the content of a TextView must exceed its visible area. This can be achieved by setting a sufficiently long text content or dynamically adding content. If the height of the TextView is set to match_parent and its parent container\'s height is also large enough, then even if the content is very long, the TextView will not display a scroll bar because its content does not exceed the visible area. Therefore, it is necessary to ensure that the height of the TextView is appropriately limited (such as using wrap_content) or the height of the parent container is set to a smaller value.</string>
 </resources>

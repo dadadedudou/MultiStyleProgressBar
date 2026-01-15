@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 外层：渐变色 "边框" -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners
+                android:topLeftRadius="@dimen/px_20"
+                android:topRightRadius="@dimen/px_100"
+                android:bottomLeftRadius="@dimen/px_80"
+                android:bottomRightRadius="@dimen/px_100"/> <!-- 圆角 -->
+            <gradient
+                android:angle="270"
+                android:startColor="#CCFFFFFF"
+                android:endColor="#66FFFFFF"
+                android:type="linear" />
+        </shape>
+    </item>
+
+    <!-- 内层：覆盖中心区域，留出边框宽度 -->
+    <item
+        android:left="@dimen/px_10"
+        android:top="@dimen/px_10"
+        android:right="@dimen/px_10"
+        android:bottom="@dimen/px_10"> <!-- 边框宽度 -->
+        <shape android:shape="rectangle">
+            <gradient
+                android:startColor="#D9F8F9FB"
+                android:endColor="#99F8F9FB"
+                android:angle="270"/>
+            <corners
+                android:topLeftRadius="@dimen/px_10"
+                android:topRightRadius="@dimen/px_90"
+                android:bottomLeftRadius="@dimen/px_70"
+                android:bottomRightRadius="@dimen/px_90"/> <!-- 圆角需略小于外层 -->
+
+        </shape>
+    </item>
+</layer-list>
