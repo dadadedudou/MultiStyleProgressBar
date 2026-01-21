@@ -14,6 +14,7 @@ import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil3.request.crossfade
@@ -21,8 +22,10 @@ import coil3.request.error
 import coil3.request.placeholder
 import com.airbnb.lottie.LottieAnimationView
 import com.example.multistyleprogressbar.R
+import com.example.multistyleprogressbar.adapter.AutoPollAdapter
 import com.example.multistyleprogressbar.adapter.FoodsAdapter
 import com.example.multistyleprogressbar.bean.MealsFood
+import com.example.multistyleprogressbar.ui.AutoPollRecycleView
 import com.example.multistyleprogressbar.ui.CircularZoomLoadingAnim
 import com.example.multistyleprogressbar.ui.CustomSmoothScroller
 import com.example.multistyleprogressbar.util.loadGif
@@ -41,6 +44,7 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
     private lateinit var thinkGif: ImageView
     private lateinit var circularZoom: CircularZoomLoadingAnim
     private lateinit var rvScrollingList: RecyclerView
+    private lateinit var horizontalFlowStyleSliding: AutoPollRecycleView
     private var markerBitAvatar: Int = 0
     private var markerBitScrollingList: Int = 0
     private lateinit var foodList: MutableList<MealsFood>
@@ -49,6 +53,8 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
     private lateinit var scroller: CustomSmoothScroller
     private lateinit var tvSwitchText: TextView
     private lateinit var buttonSwitchText: Button
+    private lateinit var horizontalFlowStyleSlidingAdapter: AutoPollAdapter
+    private lateinit var horizontalFlowStyleSlidingList: MutableList<MealsFood>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -76,6 +82,25 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
         buttonSwitchText = findViewById(R.id.button_switch_text)
         tvSwitchText.movementMethod = object : ScrollingMovementMethod(){}
         tvSwitchText.text = resources.getText(R.string.main_switch_text_content_1)
+
+        horizontalFlowStyleSliding = findViewById(R.id.horizontal_flow_style_sliding)
+
+        horizontalFlowStyleSlidingList = mutableListOf()
+        horizontalFlowStyleSlidingList.add(MealsFood("0 Small essay originally"))
+        horizontalFlowStyleSlidingList.add(MealsFood("1 strengthened AI auditing, and heavier penalties"))
+        horizontalFlowStyleSlidingList.add(MealsFood("2 In the financial sector"))
+        horizontalFlowStyleSlidingList.add(MealsFood("3 strengthened AI auditing, and heavier penalties"))
+        horizontalFlowStyleSlidingList.add(MealsFood("4 used to enhance promotional effects; for ordinary people"))
+        horizontalFlowStyleSlidingList.add(MealsFood("5 often mixing narration with argument and lyricism"))
+        horizontalFlowStyleSlidingList.add(MealsFood("6 In the entertainment industry, the term refers to the personal journey"))
+        horizontalFlowStyleSlidingList.add(MealsFood("7 curbing the chaos of small essays in the financial sector [4]. Regulatory authorities have further addressed"))
+        horizontalFlowStyleSlidingList.add(MealsFood("8 releasing TV dramas or variety shows, used to enhance promotional effects"))
+        horizontalFlowStyleSlidingList.add(MealsFood("9 and took administrative regulatory measures against the involved agents"))
+
+        horizontalFlowStyleSlidingAdapter = AutoPollAdapter(this,horizontalFlowStyleSlidingList)
+        horizontalFlowStyleSliding.layoutManager = LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false)
+        horizontalFlowStyleSliding.adapter = horizontalFlowStyleSlidingAdapter
+        horizontalFlowStyleSliding.start()
     }
 
     private fun initListener() {
