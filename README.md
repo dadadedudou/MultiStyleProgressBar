@@ -12,3 +12,6 @@
 
 ### 第三版预览效果如下
 <img src="https://github.com/dadadedudou/MultiStyleProgressBar/blob/main/preview3.gif" width="300" height="668">
+
+### 第四版预览效果如下
+<img src="https://github.com/dadadedudou/MultiStyleProgressBar/blob/main/preview4.gif" width="300" height="668">
