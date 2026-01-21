@@ -186,40 +186,51 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/linearLayout4"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/px_40"
         android:layout_marginTop="@dimen/px_50"
         android:background="@color/layout_avatar_bg"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:padding="@dimen/px_40"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:gravity="center_horizontal"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
+
         <TextView
             android:id="@+id/tv_switch_text"
             android:layout_width="@dimen/px_1500"
             android:layout_height="wrap_content"
-            android:maxHeight="@dimen/px_500"
-            android:padding="@dimen/px_40"
+            android:background="@drawable/answer_gradient_border"
             android:gravity="start"
-            android:textColor="#354764"
             android:lineSpacingMultiplier="1.2"
-            android:textSize="@dimen/px_60"
-            android:textFontWeight="400"
-            android:scrollbars="vertical"
+            android:maxHeight="@dimen/px_500"
             android:overScrollMode="always"
-            android:background="@drawable/answer_gradient_border"/>
+            android:padding="@dimen/px_40"
+            android:scrollbars="vertical"
+            android:textColor="#354764"
+            android:textFontWeight="400"
+            android:textSize="@dimen/px_60" />
+
         <Button
             android:id="@+id/button_switch_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:singleLine="true"
-            android:ellipsize="end"
             android:layout_marginStart="20dp"
             android:layout_marginEnd="20dp"
+            android:ellipsize="end"
+            android:singleLine="true"
             android:text="@string/main_button_switch_text_content" />
     </LinearLayout>
+
+    <com.example.multistyleprogressbar.ui.AutoPollRecycleView
+        android:id="@+id/horizontal_flow_style_sliding"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/px_400"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
