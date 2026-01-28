@@ -49,6 +49,7 @@ dependencies {
     implementation(libs.coil.network.okhttp)
     implementation(libs.androidx.recyclerview)
     implementation(libs.baserecyclerviewadapterhelper)
+    implementation(libs.libpag)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

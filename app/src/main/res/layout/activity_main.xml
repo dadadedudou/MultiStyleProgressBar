@@ -233,4 +233,17 @@
         android:orientation="horizontal"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
+    <RelativeLayout
+        android:id="@+id/background_view"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_1500"
+        android:layout_marginTop="@dimen/px_100"
+        app:layout_constraintTop_toBottomOf="@+id/horizontal_flow_style_sliding">
+        <org.libpag.PAGView
+            android:id="@+id/pagView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
+    </RelativeLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

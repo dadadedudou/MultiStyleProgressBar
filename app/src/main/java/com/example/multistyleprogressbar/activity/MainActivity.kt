@@ -1,20 +1,19 @@
 package com.example.multistyleprogressbar.activity
 
-import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
 import android.os.Bundle
 import android.os.Handler
 import android.os.Message
 import android.text.method.ScrollingMovementMethod
 import android.view.MotionEvent
 import android.view.View
+import android.view.ViewGroup
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.ProgressBar
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import coil3.request.crossfade
@@ -29,6 +28,9 @@ import com.example.multistyleprogressbar.ui.AutoPollRecycleView
 import com.example.multistyleprogressbar.ui.CircularZoomLoadingAnim
 import com.example.multistyleprogressbar.ui.CustomSmoothScroller
 import com.example.multistyleprogressbar.util.loadGif
+import org.libpag.PAGFile
+import org.libpag.PAGImageView
+import org.libpag.PAGView
 
 
 class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener {
@@ -64,6 +66,31 @@ class MainActivity : AppCompatActivity(), Handler.Callback, View.OnClickListener
         initView()
         initListener()
         initData()
+        initPAGView()
+    }
+
+    private fun initPAGView() {
+//        val backgroundView = findViewById<RelativeLayout?>(R.id.background_view)
+//        val pagView = PAGView(this)
+//        pagView.setLayoutParams(
+//            RelativeLayout.LayoutParams(
+//                ViewGroup.LayoutParams.MATCH_PARENT,
+//                ViewGroup.LayoutParams.MATCH_PARENT
+//            )
+//        )
+//        backgroundView?.addView(pagView)
+////        val pagFile: PAGFile? = PAGFile.Load(assets, "city_fireworks_special_effect.pag")
+////        val pagFile: PAGFile? = PAGFile.Load(assets, "vintage_film_effect.pag")
+//        val pagFile: PAGFile? = PAGFile.Load(assets, "cool_lightning.pag")
+//        pagView.composition = pagFile
+//        pagView.setRepeatCount(Int.MAX_VALUE)
+//        pagView.play()
+
+        val pagView = findViewById<PAGView>(R.id.pagView)
+        val pagFile: PAGFile? = PAGFile.Load(assets, "19.pag")
+        pagView.composition = pagFile
+        pagView.setRepeatCount(Int.MAX_VALUE)
+        pagView.play()
     }
 
     private fun initView() {
