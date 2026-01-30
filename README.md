@@ -18,3 +18,5 @@
 
 ### 第五版预览效果如下
 <img src="https://github.com/dadadedudou/MultiStyleProgressBar/blob/main/preview5.gif" width="300" height="668">
+
+### 第六版预览效果如下
